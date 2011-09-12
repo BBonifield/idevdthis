@@ -11,10 +11,13 @@ class AppsController < ApplicationController
         head 404
       end
     end
-    @app
   end
   
   def search
     query = params[:query]
+
+    results = ITunesSearchAPI.search(term: query, media: 'software')
+
+    render json: results
   end
 end
