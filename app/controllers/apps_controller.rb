@@ -2,6 +2,8 @@ class AppsController < ApplicationController
   def show
     app_name = params[:app].downcase
     @app = App.find_by_app_name app_name
+    Rails.logger.info @app.inspect
+    Rails.logger.info app_name
     unless @app
       result = App.search(app_name).first
       Rails.logger.info "hit the result"
