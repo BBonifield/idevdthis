@@ -2,3 +2,6 @@
 Developers:
 %ul
   =render partial: "developer", collection: @app.users
+
+-if @user
+  Yes, #{@user == current_user ? "you" : @user.username} worked on this!
