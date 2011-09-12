@@ -6,6 +6,7 @@ Idevdthis::Application.routes.draw do
   match "/apps/search" => "apps#search"
   match "/:app/associate" => "apps#associate"
   match "/:app" => "apps#show"
+  resources :users
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
