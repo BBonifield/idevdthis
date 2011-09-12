@@ -240,7 +240,7 @@ body { background: #002E68; color: #efefef; font-size: 1.1em; }
 #container { width: 300px; margin: 0 auto; padding: 10px; }
 header { margin-bottom: 15px; }
 header h1 { color: #fff; font-size: 28px; text-align: center; text-shadow: 2px 2px 3px #333; }
-.nav { margin-top: 15px; }
+#nav { margin-top: 15px; }
 
 .minor-group { float: right; }
 .page { display: none; margin-top: 15px; }

@@ -1,61 +1,32 @@
-﻿<div id="container">
-  <header>
-    <h1>iDev'd <code>this</code></h1>
-  </header>
-  <div id="main" role="main">
-    <div class="nav button-container">
-      <div class="actions button-group">
-        <% if current_user %>
-          <li><a href="#" data-page="mine" class="button big primary">Mine</a></li>
-        <% else %>
-          <li><a href="#" data-page="register" class="button big primary">Register</a></li>
-        <% end %>
-        <li><a href="#" data-page="apps" class="button big">Apps</a></li>
-        <li><a href="#" data-page="devs" class="button big">Devs</a></li>
-      </div>
-      <% if current_user %>
-        <div class="button-group minor-group">
-          <%=link_to 'Logout', logout_path, class: 'button big' %>
-        </div>
+﻿<% if current_user %>
+  <div id="mine" class="page">
+    <p>My apps:</p>
+    <ul>
+      <%=render partial: "app", collection: current_user.apps %>
+      <% if current_user.apps.count == 0 %>
+        <li>You haven't added any apps</li>
       <% end %>
-
-    </div>
-    
-    <% if current_user %>
-      <div id="mine" class="page">
-        <p>My apps:</p>
-        <ul>
-          <%=render partial: "app", collection: current_user.apps %>
-          <% if current_user.apps.count == 0 %>
-            <li>You haven't added any apps</li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <div id="register" class="page">
-      <p>Create your developer profile</p>
-      <p>
-        Login:
-        <a href="/auth/twitter" class="button pill big icon twitter">Twitter</a>
-        <a href="/auth/facebook" class="button pill big icon facebook">Facebook</a>
-      </p>
-    </div>
-    
-    <div id="apps" class="page">
-      <input type="search" placeholder="App name" />
-      <ul class="results"></ul>
-    </div>
-
-    <div id="devs" class="page">
-    </div>
-
-    <div id="about" class="page">
-      <p>Made by a few devs from Quick Left on a (long) lunch break at the 360iDev conference in Denver.</p>
-    </div>
+    </ul>
   </div>
-  
-  <footer>
+<% end %>
 
-  </footer>
-</div> <!--! end of #container -->
+<div id="register" class="page">
+  <p>Create your developer profile</p>
+  <p>
+    Login:
+    <a href="/auth/twitter" class="button pill big icon twitter">Twitter</a>
+    <a href="/auth/facebook" class="button pill big icon facebook">Facebook</a>
+  </p>
+</div>
+
+<div id="apps" class="page">
+  <input type="search" placeholder="App name" />
+  <ul class="results"></ul>
+</div>
+
+<div id="devs" class="page">
+</div>
+
+<div id="about" class="page">
+  <p>Made by a few devs from Quick Left on a (long) lunch break at the 360iDev conference in Denver.</p>
+</div>
