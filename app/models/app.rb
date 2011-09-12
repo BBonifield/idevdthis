@@ -13,6 +13,6 @@ class App < ActiveRecord::Base
     app.user_rating = params["averageUserRating"]
     app.store_url = params["trackViewUrl"]
 
-    app.save
+    app if app.save
   end
 end

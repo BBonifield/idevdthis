@@ -5,12 +5,13 @@ class AppsController < ApplicationController
 
     unless @app
       result = ITunesSearchAPI.search(term: app_name, media: 'software').first
-      if result.name.downcase == app_name
+      if result["trackName"].downcase == app_name
         @app = App.create_by_api(result)
       else
         head 404
       end
     end
+    @app
   end
   
   def search
