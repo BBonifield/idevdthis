@@ -1,4 +1,11 @@
 =debug @app
+
+%section
+  %div=@app.name
+  %div=@app.store_url
+  %div=@app.user_rating
+  %div=@app.publisher
+  %div=image_tag @app.icon_url_100
 Developers:
 %ul
   =render partial: "developer", collection: @app.users
