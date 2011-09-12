@@ -2,7 +2,7 @@ class AppsController < ApplicationController
   def show
     app_name = params[:app].downcase
     @app = App.find_by_app_name app_name
-    unless @app.nil?
+    if @app.nil?
       result = App.search(app_name).first
 
       if result["trackName"].downcase == app_name
