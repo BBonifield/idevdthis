@@ -2,7 +2,7 @@ class App < ActiveRecord::Base
   has_and_belongs_to_many :users
 
   def self.find_by_app_name(app_name)
-    App.where('LOWER(name) = ?', app_name.downcase)
+    App.where('LOWER(name) = ?', app_name.downcase).first
   end
   def self.create_by_api(params)
     app = App.new
