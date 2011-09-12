@@ -1,5 +1,10 @@
 Idevdthis::Application.routes.draw do
   root to: "home#index"
+
+  match "/auth/:provider/callback" => "sessions#create"
+  match "/auth/logout" => "sessions#destroy", as: "logout"
+  match "/apps/search" => "apps#search"
+  match "/:app" => "apps#show"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

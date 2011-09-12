@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  app_id: 1
+  store_url: MyString
+  icon_url_60: MyString
+  icon_url_100: MyString
+  publisher: MyString
+  user_rating: MyString
+  icon_url_512: MyString
+
+two:
+  name: MyString
+  app_id: 1
+  store_url: MyString
+  icon_url_60: MyString
+  icon_url_100: MyString
+  publisher: MyString
+  user_rating: MyString
+  icon_url_512: MyString

@@ -1,1 +1,15 @@
-Welcome to idevvd this
+Welcome to idevd this
+
+-if current_user
+  %section
+    Current user: #{current_user.username}
+    =link_to 'Logout', logout_path
+  %section
+    Search for app:
+    %input{type: "text", id: "app-store-search"}
+    %li#results
+  
+-else
+  Login with:
+  =link_to 'Facebook', '/auth/facebook'
+  =link_to 'Twitter', '/auth/twitter'
