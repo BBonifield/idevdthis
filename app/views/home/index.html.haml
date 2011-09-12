@@ -8,6 +8,10 @@ Welcome to idevd this
     Search for app:
     %input{type: "text", id: "app-store-search"}
     %li#results
+  %section
+    %header Associated Apps:
+    %li#apps
+      =render partial: "app", collection: current_user.apps
   
 -else
   Login with:
