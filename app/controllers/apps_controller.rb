@@ -1,6 +1,7 @@
 class AppsController < ApplicationController
   def show
     app_name = params[:app].downcase
+    @user = User.find_by_slug(request.subdomain) || current_user
     @app = App.find_by_app_name app_name
     Rails.logger.info @app
     Rails.logger.info app_name
