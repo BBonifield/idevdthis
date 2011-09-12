@@ -4,7 +4,9 @@ Idevdthis::Application.routes.draw do
   match "/auth/:provider/callback" => "sessions#create"
   match "/auth/logout" => "sessions#destroy", as: "logout"
   match "/apps/search" => "apps#search"
+  match "/:app/associate" => "apps#associate"
   match "/:app" => "apps#show"
+  resources :users
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

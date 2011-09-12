@@ -1,10 +1,10 @@
 class AppsController < ApplicationController
   def show
     app_name = params[:app].downcase
-    @app = App.where("name LIKE ?", app_name).first
-
+    @app = App.find_by_app_name app_name
     unless @app
-      result = ITunesSearchAPI.search(term: app_name, media: 'software').first
+      result = App.search(app_name).first
+
       if result["trackName"].downcase == app_name
         @app = App.create_by_api(result)
       else
@@ -14,10 +14,19 @@ class AppsController < ApplicationController
   end
   
   def search
-    query = params[:query]
-
-    results = ITunesSearchAPI.search(term: query, media: 'software')
+    results = App.search(params[:query])
 
     render json: results
+  end
+
+  def associate
+    if current_user
+      app_name = params[:app].downcase
+      app = App.find_by_app_name app_name
+      app.associate_user current_user
+      head 200
+    else
+      head 403
+    end
   end
 end
