@@ -4,6 +4,7 @@ class AppsController < ApplicationController
     @app = App.find_by_app_name app_name
     unless @app
       result = App.search(app_name).first
+      Rails.logger.info "hit the result"
 
       if result["trackName"].downcase == app_name
         @app = App.create_by_api(result)
