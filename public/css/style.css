@@ -269,14 +269,14 @@ header h1 { color: #fff; font-size: 28px; text-align: center; text-shadow: 2px 2
             border-radius: 12px;
 
   }
-  .apps .img,  {
+  .apps a.img {
     display: block;
     float: left;
     margin: 5px 10px 5px 5px;
   }
-    .apps .img img { border-radius: 10px; }
+    .apps a.img img { border-radius: 10px; }
 
-  .apps .name {
+  .apps a.name {
     font-size: 20px;
     vertical-align: top;
   }
