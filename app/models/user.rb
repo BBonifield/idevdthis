@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   has_many :authorizations
-  has_and_belongs_to_many :apps
+
+  has_many :app_developers
+  has_many :apps, through: :app_developers
+
   before_create :make_slug
   validates_uniqueness_of :username
 

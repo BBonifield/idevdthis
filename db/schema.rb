@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110913000012) do
+ActiveRecord::Schema.define(:version => 20110913020751) do
+
+  create_table "app_developers", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "app_id"
+    t.boolean  "linked"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "apps", :force => true do |t|
     t.string   "name"

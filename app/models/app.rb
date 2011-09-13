@@ -1,5 +1,6 @@
 class App < ActiveRecord::Base
-  has_and_belongs_to_many :users
+  has_many :app_developers
+  has_many :users, through: :app_developers
 
   def self.find_by_app_name(app_name)
     App.where('LOWER(name) = ?', app_name.downcase).first
