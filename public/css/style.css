@@ -249,6 +249,10 @@ header h1 { color: #fff; font-size: 28px; text-align: center; text-shadow: 2px 2
 .button.icon.facebook::before { background: url("facebook_16.png"); width: 16px; height: 16px; }
 .button.icon.twitter::before { background: url("twitter_16.png"); width: 16px; height: 16px; }
 
+.button.logout { float: right; }
+
+#content { margin-top: 15px; }
+
 #appSearch {
   width: 100%;
 }
@@ -270,6 +274,8 @@ header h1 { color: #fff; font-size: 28px; text-align: center; text-shadow: 2px 2
     float: left;
     margin: 5px 10px 5px 5px;
   }
+    .apps a.img img { border-radius: 10px; }
+
   .apps a.name {
     font-size: 20px;
     vertical-align: top;
