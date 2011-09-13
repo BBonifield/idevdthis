@@ -26,4 +26,8 @@ class App < ActiveRecord::Base
   def associate_user(user)
     users << user unless users.include? user
   end
+
+  def encoded_path
+    "/#{URI.encode(name)}"
+  end
 end

@@ -36,30 +36,23 @@
   <div id="container">
     <header>
       <h1>iDev'd <code>this</code></h1>
-    </header>
-    <div id="nav" class="button-container">
-
-      <div class="actions button-group">
-        <% if current_user %>
-          <li><a href="#" data-page="mine" class="button big primary">Mine</a></li>
-        <% else %>
-          <li><a href="#" data-page="register" class="button big primary">Register</a></li>
-        <% end %>
-        <li><a href="#" data-page="apps" class="button big">Apps</a></li>
-        <li><a href="#" data-page="devs" class="button big">Devs</a></li>
+      <input id="appSearch" type="search" placeholder="App name" />
+      <div id="register" class="page">
+        <p>Create your developer profile</p>
+        <p>
+          Login:
+          <a href="/auth/twitter" class="button pill big icon twitter">Twitter</a>
+          <a href="/auth/facebook" class="button pill big icon facebook">Facebook</a>
+        </p>
       </div>
-
-      <% if current_user %>
-        <div class="button-group minor-group">
-          <%=link_to 'Logout', logout_path, class: 'button big' %>
-        </div>
-      <% end %>
-
+    </header>
+    <div id="content">
+      <%= yield %>
     </div>
 
-    <%= yield %>
-
-    <footer></footer>
+    <div id="about" class="page">
+      <p>Made by a few devs from Quick Left on a (long) beer lunch break at the 360iDev conference in Denver.</p>
+    </div>
   </div> <!--! end of #container -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>

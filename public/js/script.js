@@ -18,7 +18,7 @@ app.init = function (){
 
   var cache = {},
       lastXhr;
-  $('#apps input[type=search]').autocomplete({
+  $('#appSearch').autocomplete({
     minLength: 2,
     source: function( request, response ) {
       var term = request.term;
