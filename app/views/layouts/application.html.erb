@@ -50,6 +50,8 @@
         <div id="register">
           <p>Signed in as <%=current_user.nickname%> </p>
           <%=link_to "Logout", logout_path %>
+        </div>
+      <% end %>
     </header>
     <div id="content">
       <%= yield %>
