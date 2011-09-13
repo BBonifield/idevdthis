@@ -6,8 +6,7 @@
   %div=@app.publisher
   %div=image_tag @app.icon_url_60
 Developers:
-%ul
-  =render partial: "developer", collection: @app.users
+%ul=render partial: "developer", collection: @app.users
 
 -if @user && request.subdomain != ""
   Yes, #{@user == current_user ? "you" : @user.username} worked on this!
