@@ -1,7 +1,7 @@
 %section
   %h2 #{@user.username} Profile
   %div
-    =image_tag @user.provider_icon
+    =image_tag @user.provider_icon, style: 'vertical-align: middle'
     =link_to "#{@user.username} on the web", @user.url, target: '_blank'
   %h2 I dev'd on:
   %ul.apps
