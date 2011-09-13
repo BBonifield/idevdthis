@@ -23,7 +23,7 @@ class AppsController < ApplicationController
   end
   
   def search
-    results = App.search(params[:query])
+    results = App.search(params[:query]).first(5)
 
     results_for_display = results.map do |result|
       {

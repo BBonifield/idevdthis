@@ -275,6 +275,12 @@ header h1 { color: #fff; font-size: 28px; text-align: center; text-shadow: 2px 2
     vertical-align: top;
   }
 
+.linkedStats {
+  font-size: 10px;
+  text-align: center;
+  margin: 2px 0;
+}
+
 
 .clear {
   clear: both;

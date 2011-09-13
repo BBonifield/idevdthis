@@ -36,7 +36,10 @@
   <div id="container">
     <header>
       <%= image_tag '/img/logo.png' %>
-      <input id="appSearch" type="search" placeholder="App name" />
+      <input id="appSearch" type="search" placeholder="App name" autocorrect="off" autocapitalize="off" autocomplete="off" />
+      <p class="linkedStats">Currently <%= active_user_count %> registered developers with <%= active_app_count %> registered apps.</p>
+    </header>
+    <div id="auth">
       <% unless current_user %>
         <div id="register" class="page">
           <p>Create your developer profile</p>
@@ -52,7 +55,7 @@
           <%= link_to "Logout", logout_path, class: 'button big pill' %>
         </div>
       <% end %>
-    </header>
+    </div>
     <div id="content">
       <%= yield %>
     </div>
