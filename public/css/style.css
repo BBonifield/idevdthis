@@ -359,3 +359,8 @@ h4.appFact {
   border-top: 2px solid #d0d0d0;
   border-bottom: 2px solid #d0d0d0;
 }
+
+ul.ui-autocomplete {
+  list-style: none;
+  width: 300px !important;
+}
