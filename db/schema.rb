@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110912212934) do
+ActiveRecord::Schema.define(:version => 20110913000012) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20110912212934) do
     t.datetime "updated_at"
     t.string   "slug"
     t.string   "name"
+    t.string   "image_url"
   end
 
 end

@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username
 
   def self.create_from_hash!(hash)
-    create(:name => hash['user_info']['name'], :username => hash['user_info']['nickname'])
+    create(:name => hash['user_info']['name'], :username => hash['user_info']['nickname'], image_url: hash['user_info']['image'])
   end
   private
 
