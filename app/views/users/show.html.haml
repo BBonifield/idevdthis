@@ -1,5 +1,5 @@
 %section
-  %h2=@user.username Profile
+  %h2 #{@user.username} Profile
   %div
     =image_tag @user.provider_icon
     =link_to "#{@user.username} on the web", @user.url, target: '_blank'
