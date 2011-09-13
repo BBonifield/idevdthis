@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20110913152142) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "linked"
-    t.string   "description"
+    t.text     "description"
   end
 
   create_table "apps_users", :id => false, :force => true do |t|
