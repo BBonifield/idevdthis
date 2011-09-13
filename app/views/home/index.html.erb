@@ -1,11 +1,6 @@
 ﻿<p>Currently <%= @user_count %> registered developers with <%= @app_count %> registered apps.</p>
 <h2>Most Recently Linked Apps</h2>
-<ul class="recentApps">
-<% @recent_apps.each do |app| %>
-  <li><%= link_to image_tag( app.icon_url_60 ), app.encoded_path, class: 'img' %><%= link_to app.name, app.encoded_path, class: 'name' %>
-    <br/>
-    <%= app.users.length %> developer
-    <div class="clear"></div>
-  </li>
-<% end %>
+<ul class="apps">
+  <%= render partial: 'home/app', collection: @recent_apps %>
+</ul>
 <%= link_to 'View All', 'apps' %>
