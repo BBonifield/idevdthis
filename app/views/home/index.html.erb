@@ -1,5 +1,7 @@
 ﻿<h2>Most Recently Linked Apps</h2>
-<ul class="apps">
-  <%= render partial: 'home/app', collection: @recent_apps %>
-</ul>
-<%= link_to 'View All', 'apps', class: "big button pill view-all" %>
+<% unless @recent_apps.empty? %>
+  <ul class="apps">
+    <%= render partial: 'home/app', collection: @recent_apps %>
+  </ul>
+  <%= link_to 'View All', 'apps', class: "big button pill view-all" %>
+<% end %>
