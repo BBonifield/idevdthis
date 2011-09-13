@@ -46,7 +46,10 @@
             <a href="/auth/facebook" class="button pill big icon facebook">Facebook</a>
           </p>
         </div>
-      <% end %>
+      <% else %>
+        <div id="register">
+          <p>Signed in as <%=current_user.nickname%> </p>
+          <%=link_to "Logout", logout_path %>
     </header>
     <div id="content">
       <%= yield %>
