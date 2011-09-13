@@ -16,4 +16,25 @@ class User < ActiveRecord::Base
     self.slug = self.username.downcase.gsub(/[^a-z1-9]+/, '-').chomp('-')
   end
 
+  def provider
+    user_auth = authorizations.first
+    user_auth.provider
+  end
+
+  def provider_icon
+    if provider == 'facebook'
+      '/img/facebookIcon.png'
+    elsif provider == 'twitter'
+      '/img/twitterIcon.png'
+    end
+  end
+
+  def url
+    if provider == 'facebook'
+      "http://facebook.com/#{username}"
+    elsif provider == 'twitter'
+      "http://twitter.com/#{username}"
+    end
+  end
+
 end

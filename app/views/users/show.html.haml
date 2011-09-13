@@ -1,6 +1,10 @@
 %section
-  %header Apps for #{@user.username}:
+  %h2=@user.username Profile
+  %div
+    =image_tag @user.provider_icon
+    =link_to "#{@user.username} on the web", @user.url, target: '_blank'
+  %h2 I dev'd on:
   %ul.apps
     =render partial: 'home/app', collection: @user.apps
     - if @user.apps.count == 0 
-      %li No apps for this user
+      %li Nothing yet... :(
