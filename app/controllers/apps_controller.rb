@@ -21,7 +21,15 @@ class AppsController < ApplicationController
   def search
     results = App.search(params[:query])
 
-    render json: results
+    results_for_display = results.map do |result|
+      {
+        id: result['trackId'],
+        label: result['trackName'],
+        value: result['trackName'],
+        url: "/#{URI.escape( result['trackName'] )}"
+      }
+    end
+    render json: results_for_display
   end
 
   def associate
