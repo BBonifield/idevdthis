@@ -3,10 +3,12 @@
 
 
 /* TEAM */
-  <your title>: <your name>
+  Gerred Dillon
+  Bob Bonifield
+  Taylor Beseda
   Site: 
-  Twitter: 
-  Location: 
+  Twitter: @tbeseda @bbonifield @justicefries
+  Location: Boulder, CO
 
 /* THANKS */
   Names (& URL): 
