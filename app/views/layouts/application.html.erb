@@ -39,23 +39,26 @@
       <input id="appSearch" type="search" placeholder="App name" autocorrect="off" autocapitalize="off" autocomplete="off" />
       <p class="linkedStats">Currently <%= active_user_count %> registered developers with <%= active_app_count %> registered apps.</p>
     </header>
-    <div id="auth">
-      <% unless current_user %>
+    <% unless current_user %>
+      <div id="auth">
         <div id="register">
           <h2>Create your developer profile</h2>
           <a href="/auth/twitter" class="button pill big icon twitter">Twitter</a>
           <a href="/auth/facebook" class="button pill big icon facebook">Facebook</a>
         </div>
-      <% else %>
+      </div>
+    <% end %>
+    <div id="content">
+      <%= yield %>
+    </div>
+    <% if current_user %>
+      <div id="auth">
         <div id="signedIn">
           <h2>Signed in as:</h2>
           <p><%= current_user.username %> <%= link_to "Logout", logout_path, class: 'button big pill' %></p>
         </div>
-      <% end %>
-    </div>
-    <div id="content">
-      <%= yield %>
-    </div>
+      </div>
+    <% end %>
 
     <footer>
       <p>a quick <a href="http://quickleft.com">Quick Left</a> project.</p>
