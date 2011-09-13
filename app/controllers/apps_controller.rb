@@ -29,9 +29,9 @@ class AppsController < ApplicationController
       app_name = params[:app].downcase
       app = App.find_by_app_name app_name
       app.associate_user current_user
-      head 200
+      redirect_to URI.escape("/#{app.name}")
     else
-      head 403
+      redirect_to root_path
     end
   end
 end

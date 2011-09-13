@@ -24,6 +24,6 @@ class App < ActiveRecord::Base
   end
 
   def associate_user(user)
-    users << user
+    users << user unless users.include? user
   end
 end
