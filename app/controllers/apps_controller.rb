@@ -10,10 +10,12 @@ class AppsController < ApplicationController
     @app = App.find_by_app_name app_name
 
     if @app.nil?
-      result = App.search(app_name).first
+      matching_results = App.search(app_name).select do |result|
+        result['trackName'].downcase == app_name
+      end
 
-      if result && result["trackName"].downcase == app_name
-        @app = App.create_by_api(result)
+      if matching_results.length == 1
+        @app = App.create_by_api(matching_results[0])
       else
         head 404
         return
