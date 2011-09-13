@@ -12,8 +12,8 @@ Developers:
   -else
     %li None yet!
 
--if @user && request.subdomain != ""
+-if @user && request.subdomain != "" && current_user.apps.include?(@app)
   Yes, #{@user == current_user ? "you" : @user.username} worked on this!
 
--if @user && current_user && !current_user.apps.include?(@app)
+-if current_user && !current_user.apps.include?(@app)
   =link_to "I dev'd on this", "/#{@app.name}/associate"
