@@ -2,6 +2,10 @@ class App < ActiveRecord::Base
   has_many :app_developers
   has_many :users, through: :app_developers
 
+  def self.linked_apps
+    App.where(:linked => true)
+  end
+
   def self.find_by_app_name(app_name)
     App.where('LOWER(name) = ?', app_name.downcase).first
   end
@@ -25,6 +29,7 @@ class App < ActiveRecord::Base
   end
 
   def associate_user(user)
+    update_attribute :linked, true
     users << user unless users.include? user
   end
 
