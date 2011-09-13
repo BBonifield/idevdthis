@@ -235,7 +235,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
   /* Styles */
 }
 
-body { background: #002E68; color: #efefef; font-size: 1.1em; }
+body { background: #e4e4e4; color: #434343; font-size: 1.1em; }
 
 #container { width: 300px; margin: 0 auto; padding: 10px; }
 header { margin-bottom: 15px; }
@@ -248,6 +248,10 @@ header h1 { color: #fff; font-size: 28px; text-align: center; text-shadow: 2px 2
 #register p {margin-bottom: 5px;}
 .button.icon.facebook::before { background: url("facebook_16.png"); width: 16px; height: 16px; }
 .button.icon.twitter::before { background: url("twitter_16.png"); width: 16px; height: 16px; }
+
+#appSearch {
+  width: 100%;
+}
 
 .recentApps {
   list-style: none;
