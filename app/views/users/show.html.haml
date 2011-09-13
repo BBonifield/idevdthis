@@ -2,3 +2,5 @@
   %header Apps for #{@user.username}:
   %ul
     =render partial: 'home/app', collection: @user.apps
+    - if @user.apps.count == 0 
+      %li No apps for this user
