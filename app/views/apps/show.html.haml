@@ -1,16 +1,22 @@
 
 %section
-  %div=@app.name
-  %div=link_to 'Store', @app.store_url
-  %div=@app.user_rating
-  %div=@app.publisher
-  %div=image_tag @app.icon_url_60
-Developers:
+  =link_to image_tag( @app.icon_url_60 ), @app.encoded_path, class: 'appIcon'
+  %h2=@app.name
+  %h4.appFact='By: ' + @app.publisher
+  %h4.appFact='Average User Rating: ' + @app.user_rating.to_s
+  %div.clear
+
+%h2 Developers
 %ul.apps
   -if @app.users.count > 0
     =render partial: "developer", collection: @app.users
   -else
     %li None yet!
+  -if current_user && !current_user.apps.include?(@app)
+    %li.iDevd
+      =image_tag '/img/plus.png', style: 'vertical-align: bottom'
+      =link_to "I dev'd on this!", "/#{@app.name}/associate"
 
--if current_user && !current_user.apps.include?(@app)
-  =link_to "I dev'd on this", "/#{@app.name}/associate"
+%h2 Description
+%div.description=@app.description
+=link_to image_tag( '/img/download.png' ), @app.store_url, class: 'download'

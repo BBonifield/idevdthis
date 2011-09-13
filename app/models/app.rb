@@ -16,6 +16,7 @@ class App < ActiveRecord::Base
     app.name = params["trackName"]
     app.app_id = params["trackId"]
     app.publisher = params["sellerName"]
+    app.description = params["description"]
     app.icon_url_60 = params["artworkUrl60"]
     app.icon_url_100 = params["artworkUrl100"]
     app.icon_url_512 = params["artworkUrl512"]

@@ -263,18 +263,26 @@ header h1 { color: #fff; font-size: 28px; text-align: center; text-shadow: 2px 2
 }
   .apps li {
     margin: 10px 0;
+    padding: 5px;
     background-color: #fff;
     -webkit-border-radius: 12px;
        -moz-border-radius: 12px;
             border-radius: 12px;
 
   }
-  .apps a.img {
+  .apps li.iDevd {
+    background-color: #6cb066;
+  }
+  .apps li.iDevd a {
+    color: #fff;
+    font-weight: bold;
+  }
+  .apps a.img, a.appIcon {
     display: block;
     float: left;
     margin: 5px 10px 5px 5px;
   }
-    .apps a.img img { border-radius: 10px; }
+    .apps a.img img, a.appIcon img { border-radius: 10px; }
 
   .apps a.name {
     font-size: 20px;
@@ -320,7 +328,7 @@ footer ul li {
 
 
 footer ul li img {
-  width:50px;
+  width:50pxD
   height:50px;
 }
 
@@ -338,4 +346,16 @@ footer ul li:last-child {
 
 #register {
   text-align: center;
+}
+
+h4.appFact {
+  font-size: 10px;
+}
+
+.description {
+  font-size: 10px;
+  margin: 5px 0;
+  padding: 5px 0;
+  border-top: 2px solid #d0d0d0;
+  border-bottom: 2px solid #d0d0d0;
 }
