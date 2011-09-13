@@ -1,5 +1,6 @@
 Idevdthis::Application.routes.draw do
 
+  match "/apps" => "apps#index"
   match "/auth/:provider/callback" => "sessions#create"
   match "/auth/logout" => "sessions#destroy", as: "logout"
   match "/apps/search" => "apps#search"

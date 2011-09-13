@@ -1,5 +1,9 @@
 class AppsController < ApplicationController
   respond_to :html, :json
+  def index
+    @apps = App.where(linked: true).paginate(page: params[:page])
+  end
+
   def show
     app_name = params[:app].downcase
     @user = User.find_by_slug(request.subdomain) || current_user
