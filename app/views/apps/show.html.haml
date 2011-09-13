@@ -6,14 +6,11 @@
   %div=@app.publisher
   %div=image_tag @app.icon_url_60
 Developers:
-%ul
+%ul.apps
   -if @app.users.count > 0
     =render partial: "developer", collection: @app.users
   -else
     %li None yet!
-
--if @user && request.subdomain != "" && current_user && current_user.apps.include?(@app)
-  Yes, #{@user == current_user ? "you" : @user.username} worked on this!
 
 -if current_user && !current_user.apps.include?(@app)
   =link_to "I dev'd on this", "/#{@app.name}/associate"
