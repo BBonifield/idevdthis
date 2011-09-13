@@ -48,8 +48,8 @@
         </div>
       <% else %>
         <div id="register">
-          <p>Signed in as <%= current_user.nickname %> </p>
-          <%= link_to "Logout", logout_path %>
+          <p>Signed in as <%= current_user.username %> </p>
+          <%= link_to "Logout", logout_path, class: 'button big pill' %>
         </div>
       <% end %>
     </header>
