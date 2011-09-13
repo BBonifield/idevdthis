@@ -1,3 +1,4 @@
 %li
-  =image_tag(developer.image_url, class: "img")
+  = link_to image_tag(developer.image_url), root_url(host: developer.slug + '.' + request.domain + request.port_string), class: "img"
   =link_to developer.username, root_url(host: developer.slug + '.' + request.domain + request.port_string), class: 'name'
+  .clear
