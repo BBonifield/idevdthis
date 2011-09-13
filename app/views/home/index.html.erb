@@ -1,5 +1,5 @@
-﻿<h2>Most Recently Linked Apps</h2>
-<% unless @recent_apps.empty? %>
+﻿<% unless @recent_apps.empty? %>
+  <h2>Most Recently Linked Apps</h2>
   <ul class="apps">
     <%= render partial: 'home/app', collection: @recent_apps %>
   </ul>
