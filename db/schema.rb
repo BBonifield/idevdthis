@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110913020751) do
+ActiveRecord::Schema.define(:version => 20110913021854) do
 
   create_table "app_developers", :force => true do |t|
     t.integer  "user_id"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20110913020751) do
     t.string   "icon_url_512"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "linked"
   end
 
   create_table "apps_users", :id => false, :force => true do |t|
