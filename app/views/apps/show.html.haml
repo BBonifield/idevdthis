@@ -12,7 +12,7 @@ Developers:
   -else
     %li None yet!
 
--if @user && request.subdomain != "" && current_user.apps.include?(@app)
+-if @user && request.subdomain != "" && current_user && current_user.apps.include?(@app)
   Yes, #{@user == current_user ? "you" : @user.username} worked on this!
 
 -if current_user && !current_user.apps.include?(@app)
