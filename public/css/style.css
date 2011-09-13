@@ -285,5 +285,5 @@ header h1 { color: #fff; font-size: 28px; text-align: center; text-shadow: 2px 2
 
 footer {
   font-size: 14px; color: #aaa; 
-  position: absolute; bottom: 10px;
+  margin-top: 10px;
 }
