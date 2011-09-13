@@ -32,7 +32,7 @@
 <body>
   <div id="container">
     <header>
-      <%= link_to(image_tag('/img/logo.png'), root_path(host: request.domain + request.port_string)) %>
+      <%= link_to(image_tag('/img/logo.png'), 'http://idevdthis.com') %>
       <input id="appSearch" type="search" placeholder="App name" autocorrect="off" autocapitalize="off" autocomplete="off" />
       <p class="linkedStats">Currently <%= active_user_count %> registered developers with <%= active_app_count %> registered apps.</p>
     </header>
