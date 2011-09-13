@@ -269,7 +269,7 @@ header h1 { color: #fff; font-size: 28px; text-align: center; text-shadow: 2px 2
             border-radius: 12px;
 
   }
-  .apps a.img {
+  .apps a.img, .apps .img {
     display: block;
     float: left;
     margin: 5px 10px 5px 5px;
