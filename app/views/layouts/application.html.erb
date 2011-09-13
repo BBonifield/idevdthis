@@ -41,20 +41,15 @@
     </header>
     <div id="auth">
       <% unless current_user %>
-        <div id="register" class="page">
-          <p>Create your developer profile</p>
-          <p>
-            Login:
-            <a href="/auth/twitter" class="button pill big icon twitter">Twitter</a>
-            <a href="/auth/facebook" class="button pill big icon facebook">Facebook</a>
-          </p>
+        <div id="register">
+          <h2>Create your developer profile</h2>
+          <a href="/auth/twitter" class="button pill big icon twitter">Twitter</a>
+          <a href="/auth/facebook" class="button pill big icon facebook">Facebook</a>
         </div>
       <% else %>
-        <div id="register">
-          <p>
-            Signed in as <%= current_user.username %>
-            <%= link_to "Logout", logout_path, class: 'button pill logout' %>
-          </p>
+        <div id="signedIn">
+          <h2>Signed in as:</h2>
+          <p><%= current_user.username %> <%= link_to "Logout", logout_path, class: 'button big pill' %></p>
         </div>
       <% end %>
     </div>
