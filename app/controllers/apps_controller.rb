@@ -25,7 +25,8 @@ class AppsController < ApplicationController
       {
         id: result['trackId'],
         label: result['trackName'],
-        value: result['trackName']
+        value: result['trackName'],
+        url: "/#{URI.escape( result['trackName'] )}"
       }
     end
     render json: results_for_display

@@ -33,6 +33,10 @@ app.init = function (){
           }
         });
       }
+    },
+    select: function( e, ui ) {
+      // redirect user to path of app
+      window.location.href = ui.item.url;
     }
   });
 }
