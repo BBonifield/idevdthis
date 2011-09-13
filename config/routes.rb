@@ -4,7 +4,7 @@ Idevdthis::Application.routes.draw do
   match "/auth/logout" => "sessions#destroy", as: "logout"
   match "/apps/search" => "apps#search"
   match "/:app/associate" => "apps#associate"
-  match "/:app" => "apps#show"
+  match "/:app" => "apps#show", as: :app
   constraints(Subdomain) do  
     match '/' => 'users#show'
   end  
