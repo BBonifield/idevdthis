@@ -1,19 +1,21 @@
 class AppsController < ApplicationController
+  respond_to :html, :json
   def show
     app_name = params[:app].downcase
     @user = User.find_by_slug(request.subdomain) || current_user
     @app = App.find_by_app_name app_name
-    Rails.logger.info @app
-    Rails.logger.info app_name
+
     if @app.nil?
       result = App.search(app_name).first
 
-      if result["trackName"].downcase == app_name
+      if result && result["trackName"].downcase == app_name
         @app = App.create_by_api(result)
       else
         head 404
+        return
       end
     end
+    respond_with @app
   end
   
   def search
