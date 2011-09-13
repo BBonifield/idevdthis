@@ -10,11 +10,6 @@ class User < ActiveRecord::Base
   def self.create_from_hash!(hash)
     create(:name => hash['user_info']['name'], :username => hash['user_info']['nickname'], image_url: hash['user_info']['image'])
   end
-  private
-
-  def make_slug
-    self.slug = self.username.downcase.gsub(/[^a-z1-9]+/, '-').chomp('-')
-  end
 
   def provider
     user_auth = authorizations.first
@@ -37,4 +32,9 @@ class User < ActiveRecord::Base
     end
   end
 
+  private
+
+  def make_slug
+    self.slug = self.username.downcase.gsub(/[^a-z1-9]+/, '-').chomp('-')
+  end
 end
