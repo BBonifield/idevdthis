@@ -17,6 +17,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'omniauth'
 gem 'itunes-search-api', git: "https://github.com/gerred/itunes-search-api.git"
+gem 'will_paginate'
 
 
 # Gems used only for assets and not required

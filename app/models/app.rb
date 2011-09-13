@@ -1,6 +1,7 @@
 class App < ActiveRecord::Base
   has_many :app_developers
   has_many :users, through: :app_developers
+  self.per_page = 15
 
   def self.linked_apps
     App.where(:linked => true)
