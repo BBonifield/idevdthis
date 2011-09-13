@@ -37,7 +37,7 @@
     <header>
       <h1>iDev'd <code>this</code></h1>
       <input id="appSearch" type="search" placeholder="App name" />
-      <%= unless current_user %>
+      <% unless current_user %>
         <div id="register" class="page">
           <p>Create your developer profile</p>
           <p>
@@ -48,8 +48,8 @@
         </div>
       <% else %>
         <div id="register">
-          <p>Signed in as <%=current_user.nickname%> </p>
-          <%=link_to "Logout", logout_path %>
+          <p>Signed in as <%= current_user.nickname %> </p>
+          <%= link_to "Logout", logout_path %>
         </div>
       <% end %>
     </header>
