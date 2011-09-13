@@ -1,3 +1,3 @@
 %li
-  %div=image_tag(developer.image_url, class: "img")
-  %span=link_to developer.username, root_url(host: developer.slug + '.' + request.domain + request.port_string), class: 'name'
+  =image_tag(developer.image_url, class: "img")
+  =link_to developer.username, root_url(host: developer.slug + '.' + request.domain + request.port_string), class: 'name'
