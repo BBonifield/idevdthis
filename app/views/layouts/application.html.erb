@@ -37,14 +37,16 @@
     <header>
       <h1>iDev'd <code>this</code></h1>
       <input id="appSearch" type="search" placeholder="App name" />
-      <div id="register" class="page">
-        <p>Create your developer profile</p>
-        <p>
-          Login:
-          <a href="/auth/twitter" class="button pill big icon twitter">Twitter</a>
-          <a href="/auth/facebook" class="button pill big icon facebook">Facebook</a>
-        </p>
-      </div>
+      <%= unless current_user %>
+        <div id="register" class="page">
+          <p>Create your developer profile</p>
+          <p>
+            Login:
+            <a href="/auth/twitter" class="button pill big icon twitter">Twitter</a>
+            <a href="/auth/facebook" class="button pill big icon facebook">Facebook</a>
+          </p>
+        </div>
+      <% end %>
     </header>
     <div id="content">
       <%= yield %>
